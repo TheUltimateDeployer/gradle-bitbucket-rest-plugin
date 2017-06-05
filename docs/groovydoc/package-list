@@ -1,0 +1,4 @@
+com.github.gradle.bitbucket.rest
+com.github.gradle.bitbucket.rest.tasks
+com.github.gradle.bitbucket.rest.tasks.branch
+com.github.gradle.bitbucket.rest.utils
