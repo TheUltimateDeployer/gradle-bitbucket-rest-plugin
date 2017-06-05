@@ -1,0 +1,33 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.ajoberstar:gradle-git:$depVersions.gradleGit"
+    }
+}
+
+apply plugin: org.ajoberstar.gradle.git.ghpages.GithubPagesPlugin
+
+githubPages {
+    repoUri = 'https://github.com/cdancy/gradle-bitbucket-rest-plugin.git'
+
+    pages {
+        from(groovydoc.outputs.files) {
+            into 'docs/groovydoc'
+        }
+    }
+    credentials {
+        username = resolveProperty('githubUsername')
+        password = resolveProperty('githubPassword')
+    }
+}
+
+publishGhPages.dependsOn groovydoc
+
+String resolveProperty(String propKey) {
+    String propValue = System.getenv()[propKey]
+    if(propValue) { return propValue }
+    hasProperty(propKey) ? getProperty(propKey) : null
+}
