@@ -1,7 +1,10 @@
 
 [![Build Status](https://travis-ci.org/cdancy/gradle-bitbucket-rest-plugin.svg?branch=master)](https://travis-ci.org/cdancy/gradle-bitbucket-rest-plugin)
+[![codecov](https://codecov.io/gh/cdancy/gradle-bitbucket-rest-plugin/branch/master/graph/badge.svg)](https://codecov.io/gh/cdancy/gradle-bitbucket-rest-plugin)
+[![Download](https://api.bintray.com/packages/cdancy/gradle-plugins/gradle-bitbucket-rest-plugin/images/download.svg) ](https://bintray.com/cdancy/gradle-plugins/gradle-bitbucket-rest-plugin/_latestVersion)
+[![Stack Overflow](https://img.shields.io/badge/stack%20overflow-bitbucket-4183C4.svg)](https://stackoverflow.com/questions/tagged/bitbucket)
 # gradle-bitbucket-rest-plugin
-![alt tag](https://github.com/cdancy/bitbucket/blob/master/logos/bitbucket-horizontal-color.png)
+![alt tag](https://wac-cdn.atlassian.com/dam/jcr:e2a6f06f-b3d5-4002-aed3-73539c56a2eb/bitbucket_rgb_blue.png?cdnVersion=cm)
 
 Gradle plugin for interacting with Bitbucket's REST API.
 
@@ -9,12 +12,12 @@ Gradle plugin for interacting with Bitbucket's REST API.
 
 ```
 buildscript() {
- 	repositories {
- 		jcenter()
- 	}
- 	dependencies {
- 		classpath group: 'com.github', name: 'gradle-bitbucket-rest-plugin', version: '0.0.1', changing: true
- 	}
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath group: 'com.github', name: 'gradle-bitbucket-rest-plugin', version: '0.0.1', changing: true
+    }
  }
 
  apply plugin: 'gradle-bitbucket-rest-plugin'
@@ -28,7 +31,7 @@ groovydocs can be found via [github pages here](http://cdancy.github.io/gradle-b
 
 | Name | Description |
 | --- | --- |
-| [DeleteBranch](https://github.com/cdancy/gradle-bitbucket-rest-plugin/blob/master/src/main/groovy/com/github/gradle/bitbucket/rest/tasks/branch/DeleteBranch.groovy) | Delete branch |
+| [DeleteBranch](https://github.com/cdancy/gradle-bitbucket-rest-plugin/blob/master/src/main/groovy/com/github/gradle/bitbucket/rest/tasks/branch/DeleteBranch.groovy) | Delete a branch |
 
 ## Extension
 
@@ -62,7 +65,7 @@ The [functional](https://github.com/cdancy/gradle-bitbucket-rest-plugin/tree/mas
 	
 Running functional tests against an existing bitbucket program can be done like so:
 
-	./gradlew functionalTest -PbitbucketUrl=http://127.0.0.1:7990
+	./gradlew functionalTest -PbitbucketUrl=http://127.0.0.1:7990 -PbitbucketCredentials=root:root
 	
 ## Contributing
 If you're looking for a new feature, or are interested in contributing, we'd love to review your PR. If you don't have a new feature in mind, and are more interested in just hacking on the project, feel free to reach out for suggestions.
