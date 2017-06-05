@@ -40,8 +40,8 @@ Using the extension, and subsequently exposing this potentially private informat
 
 ```
  bitbucketRest {
- 	url { "http://127.0.0.1:7990" } // Optional and defaults to http://127.0.0.1:7990
- 	credentials { "admin:password" } // Optional and defaults to null
+     url { "http://127.0.0.1:7990" } // Optional and defaults to http://127.0.0.1:7990
+     credentials { "admin:password" } // Optional and defaults to null
  }
 ```
 
@@ -65,7 +65,7 @@ The [functional](https://github.com/cdancy/gradle-bitbucket-rest-plugin/tree/mas
 	
 Running functional tests against an existing bitbucket program can be done like so:
 
-	./gradlew functionalTest -PbitbucketUrl=http://127.0.0.1:7990 -PbitbucketCredentials=root:root
+    ./gradlew functionalTest -PbitbucketUrl=http://127.0.0.1:7990 -PbitbucketCredentials=root:root
 	
 ## Contributing
 If you're looking for a new feature, or are interested in contributing, we'd love to review your PR. If you don't have a new feature in mind, and are more interested in just hacking on the project, feel free to reach out for suggestions.
