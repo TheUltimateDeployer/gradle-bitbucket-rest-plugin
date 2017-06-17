@@ -20,27 +20,35 @@ import com.github.gradle.bitbucket.rest.tasks.ProjectRepositoryAware
 import org.gradle.api.GradleException
 
 import org.gradle.api.tasks.Input
+import org.gradle.api.tasks.Internal
 
 /**
- * Delete a <a href="https://github.com/cdancy/bitbucket-rest/blob/master/src/main/java/com/cdancy/bitbucket/rest/features/BranchApi.java#L89">Branch</a>
+ * Get a <a href="https://github.com/cdancy/bitbucket-rest/blob/master/src/main/java/com/cdancy/bitbucket/rest/features/PullRequestApi.java#L70">PullRequest</a>
  */
-class DeleteBranch extends ProjectRepositoryAware {
+class GetPullRequest extends ProjectRepositoryAware {
 
     @Input
-    Closure<String> branchPath
+    Closure<Integer> pullRequestId
 
+    @Internal
+    private def instance
+    
     @Override
     void runRemoteCommand(bitbucketClient) {
-        def api = bitbucketClient.api().branchApi()
-        def localBranchName = branchPath.call()
+        def api = bitbucketClient.api().pullRequestApi()
+        def localPullRequestId = pullRequestId.call()
         def localProjectName = projectName()
         def localRepositoryName = repositoryName()
-        def success = api.delete(localProjectName, localRepositoryName, localBranchName)
-        if (success) {
-            logger.quiet "Successfully deleted Branch @ ${localProjectName}/${localRepositoryName}/${localBranchName}"
+        instance = api.get(localProjectName, localRepositoryName, localPullRequestId)
+        if (!instance.errors()) {
+            logger.quiet "Successfully retrieved PullRequest @ ${localProjectName}/${localRepositoryName}:${localPullRequestId}"
         } else {
-            throw new GradleException("Failed to delete Branch @ ${localProjectName}/${localRepositoryName}/${localBranchName}")
+            throw new GradleException("Failed to retrieve PullRequest @ ${localProjectName}/${localRepositoryName}:${localPullRequestId}: errors=${instance.errors().join(',')}")
         }
+    }
+    
+    def instance() {
+        instance
     }
 }
 
