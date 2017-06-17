@@ -47,13 +47,14 @@ the [url and credentials](https://github.com/cdancy/bitbucket-rest#credentials) 
 to be optionally supplied through properties or environment variables. This gives great flexibility in the way the user
 wants to define and/or hide their url or credentials assuming one does not want to use the `bitbucketRest` extension.
 
-## Branch Tasks
+## Tasks
+### Branch operations
 
 | Name | Description |
 | --- | --- |
 | [DeleteBranch](https://github.com/cdancy/gradle-bitbucket-rest-plugin/blob/master/src/main/groovy/com/github/gradle/bitbucket/rest/tasks/branch/DeleteBranch.groovy) | Delete a branch |
 
-## PullRequest Tasks
+### PullRequest operations
 
 | Name | Description |
 | --- | --- |
