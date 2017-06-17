@@ -9,9 +9,9 @@ class PullRequestTests extends AbstractFunctionalTest {
 
         buildFile << """
             task getPullRequest(type: com.github.gradle.bitbucket.rest.tasks.pullrequest.GetPullRequest) {
-                projectName { "PRPC" }
-                repositoryName { "prpc-platform" }
-                pullRequestId { 11567 }
+                projectName { "my-repo" }
+                repositoryName { "my-project" }
+                pullRequestId { 12345 }
             }
             
             task workflow {
@@ -24,6 +24,27 @@ class PullRequestTests extends AbstractFunctionalTest {
 
         then:
         result.output.contains('Successfully retrieved PullRequest')
+    }
+    
+    def "Can get a PullRequest and fail on errors"() {
+
+        buildFile << """
+            task getPullRequest(type: com.github.gradle.bitbucket.rest.tasks.pullrequest.GetPullRequest) {
+                projectName { "my-repo" }
+                repositoryName { "my-project" }
+                pullRequestId { 12345 }
+            }
+            
+            task workflow {
+                dependsOn getPullRequest
+            }
+        """
+
+        when:
+        BuildResult result = buildAndFail('workflow')
+
+        then:
+        result.output.contains('Failed to retrieve PullRequest')
     }
 }
 

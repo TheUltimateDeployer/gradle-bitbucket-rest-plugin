@@ -43,7 +43,7 @@ class GetPullRequest extends ProjectRepositoryAware {
         if (!instance.errors()) {
             logger.quiet "Successfully retrieved PullRequest @ ${localProjectName}/${localRepositoryName}:${localPullRequestId}"
         } else {
-            throw new GradleException("Failed to retrieve PullRequest @ ${localProjectName}/${localRepositoryName}:${localPullRequestId}: errors=${instance.errors().join(',')}")
+            throw new GradleException("Failed to retrieve PullRequest @ ${localProjectName}/${localRepositoryName}#${localPullRequestId}: errors=${instance.errors().join(',')}")
         }
     }
     
