@@ -80,14 +80,6 @@ abstract class AbstractFunctionalTest extends Specification {
         GradleRunner.create().withProjectDir(projectDir).withArguments(args).withPluginClasspath()
     }
 
-    protected String createUniqueImageId() {
-        "gradle/${generateRandomUUID()}"
-    }
-
-    protected String createUniqueContainerName() {
-        generateRandomUUID()
-    }
-
     private String generateRandomUUID() {
         UUID.randomUUID().toString().replaceAll('-', '')
     }
