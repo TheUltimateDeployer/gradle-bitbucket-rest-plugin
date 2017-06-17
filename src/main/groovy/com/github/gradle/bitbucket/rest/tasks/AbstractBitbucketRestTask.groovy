@@ -19,10 +19,12 @@ package com.github.gradle.bitbucket.rest.tasks
 import com.github.gradle.bitbucket.rest.utils.BitbucketRestThreadContextClassLoader
 import org.gradle.api.DefaultTask
 import org.gradle.api.GradleException
-import org.gradle.api.tasks.*
+import org.gradle.api.tasks.Internal
+import org.gradle.api.tasks.TaskAction
 
 abstract class AbstractBitbucketRestTask extends DefaultTask {
 
+    @Internal
     BitbucketRestThreadContextClassLoader threadContextClassLoader
 
     @TaskAction
