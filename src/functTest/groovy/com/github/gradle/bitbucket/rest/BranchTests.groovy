@@ -11,7 +11,7 @@ class BranchTests extends AbstractFunctionalTest {
             task deleteBranch(type: com.github.gradle.bitbucket.rest.tasks.branch.DeleteBranch) {
                 projectName { "my-project" }
                 repositoryName { "my-repo" }
-				branchPath { "my-branch" }
+                branchPath { "my-branch" }
             }
             
             task workflow {
@@ -23,7 +23,7 @@ class BranchTests extends AbstractFunctionalTest {
         BuildResult result = build('workflow')
 
         then:
-        result.output.contains('Branch deletion success: true')
+        result.output.contains('Successfully deleted Branch')
     }
 }
 

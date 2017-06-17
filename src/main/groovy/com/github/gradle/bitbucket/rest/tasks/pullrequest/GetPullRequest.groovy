@@ -14,7 +14,7 @@
  * limitations under the License.
  */
  
-package com.github.gradle.bitbucket.rest.tasks.branch
+package com.github.gradle.bitbucket.rest.tasks.pullrequest
 
 import com.github.gradle.bitbucket.rest.tasks.ProjectRepositoryAware
 import org.gradle.api.GradleException
