@@ -27,12 +27,6 @@ buildscript() {
 
 groovydocs can be found via [github pages here](http://cdancy.github.io/gradle-bitbucket-rest-plugin/docs/groovydoc/)
 
-## Tasks
-
-| Name | Description |
-| --- | --- |
-| [DeleteBranch](https://github.com/cdancy/gradle-bitbucket-rest-plugin/blob/master/src/main/groovy/com/github/gradle/bitbucket/rest/tasks/branch/DeleteBranch.groovy) | Delete a branch |
-
 ## Extension
 
 The `bitbucketRest` extension is provided to define the `url` and `credentials` for connecting to an Bitbucket instance.
@@ -52,6 +46,18 @@ the [url and credentials](https://github.com/cdancy/bitbucket-rest#credentials) 
 [bitbucket-rest](https://github.com/cdancy/bitbucket-rest#property-based-setup) allows the `url` and `credentials`
 to be optionally supplied through properties or environment variables. This gives great flexibility in the way the user
 wants to define and/or hide their url or credentials assuming one does not want to use the `bitbucketRest` extension.
+
+## Branch Tasks
+
+| Name | Description |
+| --- | --- |
+| [DeleteBranch](https://github.com/cdancy/gradle-bitbucket-rest-plugin/blob/master/src/main/groovy/com/github/gradle/bitbucket/rest/tasks/branch/DeleteBranch.groovy) | Delete a branch |
+
+## PullRequest Tasks
+
+| Name | Description |
+| --- | --- |
+| [GetPullRequest](https://github.com/cdancy/gradle-bitbucket-rest-plugin/blob/master/src/main/groovy/com/github/gradle/bitbucket/rest/tasks/pullrequest/GetPullRequest.groovy) | Get a PullRequest |
 
 ## Examples
 
