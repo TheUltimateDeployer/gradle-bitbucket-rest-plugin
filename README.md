@@ -23,6 +23,10 @@ buildscript() {
  apply plugin: 'gradle-bitbucket-rest-plugin'
  ```
  
+## On new features
+
+New tasks or features are generally added as needed and/or requested. If there is something you want to see just open an ISSUE and ask or send in a PullRequest. Generally speaking tasks here have a 1-to-1 mapping to endpoints in the [bitbucket-rest](https://github.com/cdancy/bitbucket-rest) java client. The philosophy is that this plugin should be generic in nature acting and act as building blocks for you to potentially build more complicated and specific plugins should you need to do so.
+
 ## Documentation
 
 groovydocs can be found via [github pages here](http://cdancy.github.io/gradle-bitbucket-rest-plugin/docs/groovydoc/)
